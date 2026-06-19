@@ -35,18 +35,17 @@ export default function Notes({ tag }: NotesClientProps) {
     const notes = data?.notes || [];
     const totalPages = data?.totalPages || 0;
 
-    const updateSearchQuery = useDebouncedCallback(
-        (e: React.ChangeEvent<HTMLInputElement>) => {
-            setSearchQuery(e.target.value);
-            setCurrentPage(1);
-        },
+    const updateSearchQuery = useDebouncedCallback((value: string) => {
+        setSearchQuery(value);
+        setCurrentPage(1);
+    },
         300
     );
 
     return (
         <div className={css.app}>
             <header className={css.toolbar}>
-                <SearchBox onChange={updateSearchQuery} />
+                <SearchBox onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateSearchQuery(e.target.value)} />
 
                 {totalPages > 1 && (
                     <Pagination
