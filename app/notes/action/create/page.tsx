@@ -6,10 +6,10 @@ import css from "./CreateNote.module.css";
 
 export const metadata: Metadata = {
     title: "Create Note | NoteHub",
-    description: "Create a new personal note to keep track of your tasks and thoughts.",
+    description: "Create a new personal note to keep track of your tasks.",
     openGraph: {
         title: "Create Note | NoteHub",
-        description: "Create a new personal note to keep track of your tasks and thoughts.",
+        description: "Create a new personal note to keep track of your tasks.",
         url: "https://notehub.com/notes/action/create",
         images: [
             {
